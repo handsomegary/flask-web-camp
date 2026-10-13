@@ -1,0 +1,10 @@
+<header class="site-header">
+  <nav class="container nav" aria-label="主要導覽">
+    <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark" aria-hidden="true">✓</span>日常清單</a>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>首頁</a>
+      <a href="{{ url_for('todo') }}" {% if request.endpoint == 'todo' %}aria-current="page"{% endif %}>待辦清單</a>
+      <a href="{{ url_for('user', name='handsomegary') }}" {% if request.endpoint == 'user' %}aria-current="page"{% endif %}>關於我</a>
+    </div>
+  </nav>
+</header>

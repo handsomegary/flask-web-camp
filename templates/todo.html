@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}待辦清單{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div><p class="eyebrow">MAKE ROOM FOR WHAT MATTERS</p><h1>我的待辦清單</h1><p class="muted">一次一件事，慢慢把想法變成行動。</p></div>
+  <span class="count">{{ todos|length }} 件待辦</span>
+</section>
+<section class="panel add-panel" aria-labelledby="add-title">
+  <h2 id="add-title">新增一件想做的事</h2>
+  <form method="post" action="{{ url_for('todo') }}" class="add-form">
+    {{ form.hidden_tag() }}
+    <div class="input-group">
+      {{ form.todo.label() }}
+      {{ form.todo(placeholder="例如：讀完一章 Python、練習 Flask", maxlength="200", required=true, autocomplete="off", aria_describedby="task-help task-errors", aria_invalid="true" if form.todo.errors else "false") }}
+      <p id="task-help" class="input-hint">最多 200 個字。清單會依新增順序排列。</p>
+      <div id="task-errors" class="field-errors" role="alert">{% for error in form.todo.errors %}<p>{{ error }}</p>{% endfor %}</div>
+    </div>
+    {{ form.submit(class="button") }}
+  </form>
+</section>
+<section class="task-section" aria-labelledby="list-title">
+  <div class="section-heading"><h2 id="list-title">接下來要做的事</h2><span class="muted">建立時間以 UTC 顯示</span></div>
+  {% if todos %}
+    <ol class="task-list">
+    {% for task in todos %}
+      <li class="task-row">
+        <span class="task-number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+        <div class="task-content"><h3>{{ task.task_name }}</h3><time datetime="{{ task.date_added.isoformat() }}Z">{{ task.date_added.strftime('%Y-%m-%d %H:%M') }} UTC</time></div>
+        <form method="post" action="{{ url_for('delete_task', id=task.id) }}">
+          {{ delete_form.hidden_tag() }}
+          <button class="delete-button" type="submit" aria-label="刪除待辦：{{ task.task_name }}">刪除 <span aria-hidden="true">×</span></button>
+        </form>
+      </li>
+    {% endfor %}
+    </ol>
+  {% else %}
+    <div class="empty-state"><span aria-hidden="true">✦</span><h3>清單空空，可能性滿滿。</h3><p class="muted">在上方新增第一件想做的事吧。</p></div>
+  {% endif %}
+</section>
+{% endblock %}
