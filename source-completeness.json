@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "repository": "flask-web-camp",
+  "finished_application_runtime": "complete_after_installing_declared_requirements",
+  "original_course_materials": "not_preserved",
+  "original_source_directory": "no_longer_available",
+  "source_status_reason": "Original course PDFs, ZIPs and practice files are not included and the original source files are currently unavailable.",
+  "companion_reference_audit": "cannot_verify_without_original_documents",
+  "original_instruction_pdfs": {
+    "status": "not_preserved",
+    "sha256": null
+  },
+  "original_zips_practice_files_and_assets": {
+    "status": "not_preserved",
+    "sha256": null
+  },
+  "finished_application_assets": {
+    "status": "tracked_or_generated_as_documented",
+    "tracked": ["templates/", "static/style.css", "static/favicon.svg", "requirements.txt"],
+    "generated_at_first_start": ["instance/tasks.db", "instance/.secret_key"]
+  },
+  "limitations": [
+    "The current application can be run, but this repository is not a complete archive of the original camp materials.",
+    "Original referenced attachments have not been replaced by invented or unverified course downloads."
+  ]
+}

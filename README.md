@@ -86,6 +86,8 @@ python app.py
 
 Repo 只包含程式、測試與說明，不包含原課程 PDF、圖片素材或既有資料庫。介面使用本機 CSS，可在沒有外部 CDN 的情況下使用。
 
+原課程 PDF、ZIP 與練習檔未收錄，原來源目前不可取得。因此此 repo 的成品網站可完整執行，但不能稱為原營隊教材與附件的完整保存。原文件引用的附件目前無法重新核對；來源狀態見 [source-completeness.json](source-completeness.json)。
+
 ## 測試
 
 安裝套件後，在專案根目錄執行 Python 標準函式庫的測試工具：
