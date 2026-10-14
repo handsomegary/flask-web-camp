@@ -16,11 +16,31 @@
   },
   "finished_application_assets": {
     "status": "tracked_or_generated_as_documented",
-    "tracked": ["templates/", "static/style.css", "static/favicon.svg", "requirements.txt"],
-    "generated_at_first_start": ["instance/tasks.db", "instance/.secret_key"]
+    "tracked": [
+      "templates/",
+      "static/style.css",
+      "static/favicon.svg",
+      "requirements.txt"
+    ],
+    "generated_at_first_start": [
+      "instance/tasks.db",
+      "instance/.secret_key"
+    ]
   },
   "limitations": [
     "The current application can be run, but this repository is not a complete archive of the original camp materials.",
     "Original referenced attachments have not been replaced by invented or unverified course downloads."
-  ]
+  ],
+  "preservation_review": {
+    "review_date": "2026-10-14",
+    "scope": "Retain all supplied original noncompiled source, data, documents and attachments, including materials unused by the finished implementation.",
+    "excluded": [
+      "student-generated compiled artifacts",
+      "regenerable build and IDE caches"
+    ],
+    "privacy": "Student identity-bearing material requires explicitly labelled anonymous preservation.",
+    "original_materials_complete": false,
+    "search_scope": "Previously supplied source location, local Downloads and Codex work/output copies, and the available course ZIP indexes.",
+    "result": "Original camp documents and supplied companion assets remain unavailable. No replacement has been labelled as an original."
+  }
 }
